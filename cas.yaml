@@ -15,7 +15,7 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.clientaud.daala.com
+      - FABRIC_CA_SERVER_CA_NAME=caClientAud
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientaud.daala.com-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/50646ba4d52b12cbc4b8925a2e38bd56e9ca98fffba6948afd805ccd18510c56_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
@@ -38,7 +38,7 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.clientinr.daala.com
+      - FABRIC_CA_SERVER_CA_NAME=caClientInr
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientinr.daala.com-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/9f7887ac0444609e8af14da380003ab50d7bacc9648d8feaa51bdd841032a0f4_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
@@ -62,7 +62,7 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.daalaaud.daala.com
+      - FABRIC_CA_SERVER_CA_NAME=caDaalaAud
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalaaud.daala.com-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/35bdbb15bdc86973cb4b8114adea57604ae0ff2e1e2e4f6c3d944e5a171b5a53_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
@@ -86,7 +86,7 @@ services:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.daalainr.daala.com
+      - FABRIC_CA_SERVER_CA_NAME=caDaalaInr
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalainr.daala.com-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/1d0bddf95b0f10c4ed9b3c92e97dee10d9e3c4975d02cc63e085e9cc5caaa652_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true

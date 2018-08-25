@@ -40,6 +40,10 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
     volumes:
         - /var/run/:/host/var/run/
         - ./crypto-config/peerOrganizations/daalaaud.daala.com/peers/peer0.daalaaud.daala.com/msp:/etc/hyperledger/fabric/msp
@@ -79,6 +83,10 @@ services:
       - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
       - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
     volumes:
         - /var/run/:/host/var/run/
         - ./crypto-config/peerOrganizations/daalaaud.daala.com/peers/peer1.daalaaud.daala.com/msp:/etc/hyperledger/fabric/msp
