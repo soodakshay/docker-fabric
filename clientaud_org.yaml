@@ -35,6 +35,7 @@ services:
       - CORE_LOGGING_LEVEL=INFO
           #- CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
       - CORE_PEER_GOSSIP_USELEADERELECTION=true
       - CORE_PEER_GOSSIP_ORGLEADER=false
       - CORE_PEER_PROFILE_ENABLED=true
@@ -75,6 +76,7 @@ services:
       # bridge network as the peers
       # https://docs.docker.com/compose/networking/
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=daala
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
       - CORE_LOGGING_LEVEL=INFO
           #- CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_TLS_ENABLED=true
