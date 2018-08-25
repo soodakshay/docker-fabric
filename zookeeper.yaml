@@ -18,8 +18,6 @@ services:
 
   zookeeper0:
     image: hyperledger/fabric-zookeeper
-    hostname: zookeeper0.daala.com
-
     environment:
       - ZOO_MY_ID=1
       - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
@@ -30,13 +28,10 @@ services:
     extra_hosts:
       - zookeeper0.daala.com:127.0.0.1
     networks:
-      daala:
-        aliases:
-          - zookeeper0.daala.com
+      - daala
+
   zookeeper1:
     image: hyperledger/fabric-zookeeper
-    hostname: zookeeper1.daala.com
-
     environment:
       - ZOO_MY_ID=2
       - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
@@ -47,13 +42,10 @@ services:
     extra_hosts:
       - zookeeper1.daala.com:127.0.0.1
     networks:
-      daala:
-        aliases:
-          - zookeeper1.daala.com
+      - daala
+
   zookeeper2:
     image: hyperledger/fabric-zookeeper
-    hostname: zookeeper2.daala.com
-
     environment:
       - ZOO_MY_ID=3
       - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
@@ -64,6 +56,4 @@ services:
     extra_hosts:
       - zookeeper2.daala.com:127.0.0.1
     networks:
-      daala:
-        aliases:
-          - zookeeper2.daala.com
+      - daala
