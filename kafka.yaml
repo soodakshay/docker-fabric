@@ -40,6 +40,7 @@ services:
       - zookeeper2:zookeeper2
     networks:
       - daala
+      
   kafka1:
     image: hyperledger/fabric-kafka
     environment:
