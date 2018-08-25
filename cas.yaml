@@ -15,12 +15,12 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=caClientAud
+      - FABRIC_CA_SERVER_CA_NAME=ca.clientaud.daala.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientaud.daala.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/50646ba4d52b12cbc4b8925a2e38bd56e9ca98fffba6948afd805ccd18510c56_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/6d2076ddf2635ea18fd527df8a2ed46617a89bc02f72cdb35610e1cd6f5b5d62_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.clientaud.daala.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/fdd5a33bcff4dbdd401215e0c94c12d7c723846d171899ca5bff26cff8f18315_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/3dff3ffc771d1a1f7c89bbb28aa0679c25ec51c24b4d976ef7e8e9a5f1985f1b_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -38,12 +38,12 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=caClientInr
+      - FABRIC_CA_SERVER_CA_NAME=ca.clientinr.daala.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientinr.daala.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/9f7887ac0444609e8af14da380003ab50d7bacc9648d8feaa51bdd841032a0f4_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/f6f946578cf27a79ac450189088941144f11d06a445e45b1263f821674a1f384_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.clientinr.daala.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/bf83ca2efb963995ff7accb2b7f5b4d2845b672c76b8dca45b4165e3205d1aec_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/a7ee7f21500ea21089f6ffa1775f5370c134e0a65fbf8e08ec0a69980310992e_sk
     ports:
       - "9054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -62,12 +62,12 @@ services:
     image: hyperledger/fabric-ca:latest
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=caDaalaAud
+      - FABRIC_CA_SERVER_CA_NAME=ca.daalaaud.daala.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalaaud.daala.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/35bdbb15bdc86973cb4b8114adea57604ae0ff2e1e2e4f6c3d944e5a171b5a53_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/0ef8df5f3fd521dae533d696fbc9e324edf52f360633d81c5674721db92153d3_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.daalaaud.daala.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/7eff3f291d55e8431223490f0efdba6f5911d01ca508b9f62c77612900ad955c_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/89b01dad84394d6233f6394b9b1b0695a52c01e9cfa860e1ee05559d2cad59c9_sk
     ports:
       - "8054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -86,12 +86,12 @@ services:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=caDaalaInr
+      - FABRIC_CA_SERVER_CA_NAME=ca.daalainr.daala.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalainr.daala.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/1d0bddf95b0f10c4ed9b3c92e97dee10d9e3c4975d02cc63e085e9cc5caaa652_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/148667607b0e00a1fb9b3e52270750fde720ea38247a47348ee84d33f07baf08_sk
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.daalainr.daala.com-cert.pem
-      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/7ae286b7378cdb8e36cc0bb5faedfd6f6606ec2fdb918ef658b079854bb93f9b_sk
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/e8ce2659f49e0d2929fed6ce9240de1968d5c1945a37a2613c46a57299bdaf4d_sk
     ports:
       - "10054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
