@@ -50,7 +50,7 @@ services:
     extra_hosts:
       - peer0ClientAud:127.0.0.1
     networks:
-      byfn:
+      daala:
         aliases:
           - peer0.clientaud.daala.com
 
