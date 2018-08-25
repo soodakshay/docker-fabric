@@ -22,7 +22,7 @@ services:
     environment:
       - CORE_PEER_ID=peer0.clientaud.daala.com
       - CORE_PEER_ADDRESS=peer0ClientAud:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.clientaud.daala:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.clientaud.daala.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.clientaud.daala.com:7051
       - CORE_PEER_LOCALMSPID=ClientaudMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -65,7 +65,7 @@ services:
     environment:
       - CORE_PEER_ID=peer1.clientaud.daala.com
       - CORE_PEER_ADDRESS=peer1ClientAud:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.clientaud.daala:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.clientaud.daala.com:7051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.clientaud.daala.com:7051
       - CORE_PEER_LOCALMSPID=ClientaudMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock

@@ -20,9 +20,9 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     environment:
-      - CORE_PEER_ID=peer0.daalainr.daala.com
+      - CORE_PEER_ID=peer0.clientinr.daala.com
       - CORE_PEER_ADDRESS=peer0ClientInr:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.daalainr.daala.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.clientinr.daala.com:7051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.clientinr.daala.com:7051
       - CORE_PEER_LOCALMSPID=ClientinrMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
@@ -66,7 +66,7 @@ services:
       - CORE_PEER_ID=peer1.clientinr.daala.com
       - CORE_PEER_ADDRESS=peer1ClientInr:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.clientinr.daala.com:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.daalainr.daala.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.clientinr.daala.com:7051
       - CORE_PEER_LOCALMSPID=ClientinrMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       # the following setting starts chaincode containers on the same

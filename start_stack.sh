@@ -1,3 +1,4 @@
+export COMPOSE_PROJECT_NAME=daala
 docker stack deploy --compose-file zookeeper.yaml daala
 docker stack deploy --compose-file kafka.yaml daala
 docker stack deploy --compose-file cas.yaml daala
