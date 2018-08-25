@@ -11,6 +11,9 @@ volumes:
 
 networks:
   daala:
+    external:
+      name: daala
+    
 
 
 services:
