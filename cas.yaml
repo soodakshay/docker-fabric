@@ -1,0 +1,107 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '3.4'
+
+networks:
+  daala:
+
+
+services:
+
+  caClientAud:
+    image: hyperledger/fabric-ca:latest
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.clientaud.daala.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientaud.daala.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/50646ba4d52b12cbc4b8925a2e38bd56e9ca98fffba6948afd805ccd18510c56_sk
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.clientaud.daala.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/fdd5a33bcff4dbdd401215e0c94c12d7c723846d171899ca5bff26cff8f18315_sk
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/clientaud.daala.com/ca:/etc/hyperledger/fabric-ca-server-config/ca
+      - ./crypto-config/peerOrganizations/clientaud.daala.com/tlsca:/etc/hyperledger/fabric-ca-server-config/tlsca
+    extra_hosts:
+      - caClientAud:127.0.0.1
+
+    networks:
+      daala:
+        aliases:
+          - ca.clientaud.daala.com
+  caClientInr:
+    image: hyperledger/fabric-ca:latest
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.clientinr.daala.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.clientinr.daala.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/9f7887ac0444609e8af14da380003ab50d7bacc9648d8feaa51bdd841032a0f4_sk
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.clientinr.daala.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/bf83ca2efb963995ff7accb2b7f5b4d2845b672c76b8dca45b4165e3205d1aec_sk
+    ports:
+      - "9054:7054"
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/clientinr.daala.com/ca:/etc/hyperledger/fabric-ca-server-config/ca
+      - ./crypto-config/peerOrganizations/clientinr.daala.com/tlsca:/etc/hyperledger/fabric-ca-server-config/tlsca
+    extra_hosts:
+      - caClientInr:127.0.0.1
+
+    networks:
+      daala:
+        aliases:
+          - ca.clientinr.daala.com
+
+  caDaalaAud:
+    image: hyperledger/fabric-ca:latest
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.daalaaud.daala.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalaaud.daala.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/35bdbb15bdc86973cb4b8114adea57604ae0ff2e1e2e4f6c3d944e5a171b5a53_sk
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.daalaaud.daala.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/7eff3f291d55e8431223490f0efdba6f5911d01ca508b9f62c77612900ad955c_sk
+    ports:
+      - "8054:7054"
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/daalaaud.daala.com/ca:/etc/hyperledger/fabric-ca-server-config/ca
+      - ./crypto-config/peerOrganizations/daalaaud.daala.com/tlsca:/etc/hyperledger/fabric-ca-server-config/tlsca
+    extra_hosts:
+      - caDaalaAud:127.0.0.1
+
+    networks:
+      daala:
+        aliases:
+          - ca.daalaaud.daala.com
+
+  caDaalaInr:
+    image: hyperledger/fabric-ca
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca.daalainr.daala.com
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca/ca.daalainr.daala.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ca/1d0bddf95b0f10c4ed9b3c92e97dee10d9e3c4975d02cc63e085e9cc5caaa652_sk
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/tlsca.daalainr.daala.com-cert.pem
+      - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/fabric-ca-server-config/tlsca/7ae286b7378cdb8e36cc0bb5faedfd6f6606ec2fdb918ef658b079854bb93f9b_sk
+    ports:
+      - "10054:7054"
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/peerOrganizations/daalainr.daala.com/ca:/etc/hyperledger/fabric-ca-server-config/ca
+      - ./crypto-config/peerOrganizations/daalainr.daala.com/tlsca:/etc/hyperledger/fabric-ca-server-config/tlsca
+    extra_hosts:
+      - caDaalaInr:127.0.0.1
+
+    networks:
+      daala:
+        aliases:
+          - ca.daalainr.daala.com

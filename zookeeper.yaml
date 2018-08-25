@@ -1,0 +1,69 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '3.4'
+
+volumes:
+  zookeeper0:
+  zookeeper1:
+  zookeeper2:
+
+networks:
+  daala:
+
+
+services:
+
+  zookeeper0:
+    image: hyperledger/fabric-zookeeper
+    hostname: zookeeper0.daala.com
+
+    environment:
+      - ZOO_MY_ID=1
+      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+    ports:
+      - 2111
+      - 2888
+      - 3888
+    extra_hosts:
+      - zookeeper0.daala.com:127.0.0.1
+    networks:
+      daala:
+        aliases:
+          - zookeeper0.daala.com
+  zookeeper1:
+    image: hyperledger/fabric-zookeeper
+    hostname: zookeeper1.daala.com
+
+    environment:
+      - ZOO_MY_ID=2
+      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+    ports:
+      - 2111
+      - 2888
+      - 3888
+    extra_hosts:
+      - zookeeper1.daala.com:127.0.0.1
+    networks:
+      daala:
+        aliases:
+          - zookeeper1.daala.com
+  zookeeper2:
+    image: hyperledger/fabric-zookeeper
+    hostname: zookeeper2.daala.com
+
+    environment:
+      - ZOO_MY_ID=3
+      - ZOO_SERVERS=server.1=zookeeper0:2888:3888 server.2=zookeeper1:2888:3888 server.3=zookeeper2:2888:3888
+    ports:
+      - 2111
+      - 2888
+      - 3888
+    extra_hosts:
+      - zookeeper2.daala.com:127.0.0.1
+    networks:
+      daala:
+        aliases:
+          - zookeeper2.daala.com

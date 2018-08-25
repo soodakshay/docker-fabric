@@ -1,0 +1,95 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '3.4'
+
+volumes:
+  p0ClientInrVol:
+  p1ClientInrVol:
+
+networks:
+  daala:
+
+
+services:
+
+  peer0ClientInr:
+    image: hyperledger/fabric-peer:latest
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    environment:
+      - CORE_PEER_ID=peer0.daalainr.daala.com
+      - CORE_PEER_ADDRESS=peer0ClientInr:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0ClientInr:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1ClientInr:7051
+      - CORE_PEER_CHAINCODELISTENADDRESS=peer0ClientInr:7052
+      - CORE_PEER_LOCALMSPID=ClientinrMSP
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      # the following setting starts chaincode containers on the same
+      # bridge network as the peers
+      # https://docs.docker.com/compose/networking/
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${COMPOSE_PROJECT_NAME}_byfn
+      - CORE_LOGGING_LEVEL=DEBUG
+          #- CORE_LOGGING_LEVEL=DEBUG
+      - CORE_PEER_TLS_ENABLED=tls
+      - CORE_PEER_GOSSIP_USELEADERELECTION=true
+      - CORE_PEER_GOSSIP_ORGLEADER=false
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+    volumes:
+        - /var/run/:/host/var/run/
+        - ./crypto-config/peerOrganizations/clientinr.daala.com/peers/peer0.clientinr.daala.com/msp:/etc/hyperledger/fabric/msp
+        - ./crypto-config/peerOrganizations/clientinr.daala.com/peers/peer0.clientinr.daala.com/tls:/etc/hyperledger/fabric/tls
+        - p0ClientInrVol:/var/hyperledger/production
+    ports:
+      - 9051:7051
+      - 9053:7053
+    extra_hosts:
+      - peer0ClientInr:127.0.0.1
+    networks:
+      daala:
+        aliases:
+          - peer0.clientinr.daala.com
+
+  peer1ClientInr:
+    image: hyperledger/fabric-peer:latest
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: peer node start
+    environment:
+      - CORE_PEER_ID=peer1.clientinr.daala.com
+      - CORE_PEER_ADDRESS=peer1ClientInr:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1ClientInr:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0ClientInr:7051
+      - CORE_PEER_LOCALMSPID=ClientinrMSP
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      # the following setting starts chaincode containers on the same
+      # bridge network as the peers
+      # https://docs.docker.com/compose/networking/
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${COMPOSE_PROJECT_NAME}_byfn
+      - CORE_LOGGING_LEVEL=INFO
+          #- CORE_LOGGING_LEVEL=DEBUG
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_GOSSIP_USELEADERELECTION=true
+      - CORE_PEER_GOSSIP_ORGLEADER=false
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+    volumes:
+        - /var/run/:/host/var/run/
+        - ./crypto-config/peerOrganizations/clientinr.daala.com/peers/peer1.clientinr.daala.com/msp:/etc/hyperledger/fabric/msp
+        - ./crypto-config/peerOrganizations/clientinr.daala.com/peers/peer1.clientinr.daala.com/tls:/etc/hyperledger/fabric/tls
+        - p1ClientInrVol:/var/hyperledger/production
+    ports:
+      - 10051:7051
+      - 10053:7053
+    extra_hosts:
+      - peer1ClientInr:127.0.0.1
+    networks:
+      daala:
+        aliases:
+          - peer1.clientinr.daala.com
