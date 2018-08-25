@@ -7,8 +7,8 @@ version: '3.4'
 
 networks:
   daala:
-    external:
-      name: daala
+    driver: overlay
+    attachable: true
 
 
 services:

@@ -11,8 +11,8 @@ volumes:
 
 networks:
   daala:
-    external:
-      name: daala
+    driver: overlay
+    attachable: true
     
 
 
