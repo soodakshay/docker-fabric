@@ -22,9 +22,8 @@ services:
     environment:
       - CORE_PEER_ID=peer0.daalainr.daala.com
       - CORE_PEER_ADDRESS=peer0DaalaInr:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0DaalaInr:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1DaalaInr:7051
-      - CORE_PEER_CHAINCODELISTENADDRESS=peer0DaalaInr:7052
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.daalainr.daala.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.daalainr.daala.com:7051
       - CORE_PEER_LOCALMSPID=DaalainrMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       # the following setting starts chaincode containers on the same
@@ -66,8 +65,8 @@ services:
     environment:
       - CORE_PEER_ID=peer1.daalainr.daala.com
       - CORE_PEER_ADDRESS=peer1DaalaInr:7051
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1DaalaInr:7051
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0DaalaInr:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.daalainr.daala.com:7051
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.daalainr.daala.com:7051
       - CORE_PEER_LOCALMSPID=DaalainrMSP
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       # the following setting starts chaincode containers on the same
