@@ -54,8 +54,6 @@ services:
     ports:
       - 12051:7051
       - 12053:7053
-    extra_hosts:
-      - peer0DaalaInr:127.0.0.1
     networks:
       daala:
         aliases:
@@ -98,8 +96,6 @@ services:
     ports:
       - 13051:7051
       - 13053:7053
-    extra_hosts:
-      - peer1DaalaInr:127.0.0.1
     networks:
       daala:
         aliases:
