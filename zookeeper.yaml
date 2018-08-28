@@ -19,6 +19,7 @@ networks:
 services:
 
   zookeeper0:
+    restart: no
     image: hyperledger/fabric-zookeeper
     environment:
       - ZOO_MY_ID=1
@@ -31,6 +32,7 @@ services:
       - daala
 
   zookeeper1:
+    restart: no
     image: hyperledger/fabric-zookeeper
     environment:
       - ZOO_MY_ID=2
@@ -43,6 +45,7 @@ services:
       - daala
 
   zookeeper2:
+  restart: no
     image: hyperledger/fabric-zookeeper
     environment:
       - ZOO_MY_ID=3

@@ -20,6 +20,7 @@ networks:
 services:
 
   kafka0:
+    restart: no
     image: hyperledger/fabric-kafka
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -44,6 +45,7 @@ services:
       - daala
       
   kafka1:
+    restart: no
     image: hyperledger/fabric-kafka
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -66,7 +68,9 @@ services:
       - zookeeper2:zookeeper2
     networks:
       - daala
+
   kafka2:
+    restart: no
     image: hyperledger/fabric-kafka
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -89,7 +93,9 @@ services:
       - zookeeper2:zookeeper2
     networks:
       - daala
+
   kafka3:
+    restart: no
     image: hyperledger/fabric-kafka
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
