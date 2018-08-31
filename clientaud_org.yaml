@@ -120,7 +120,7 @@ services:
       #- CORE_LOGGING_LEVEL=DEBUG
       - CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_ID=cli
-      - CORE_PEER_ADDRESS=peer0ClientAud:7051
+      - CORE_PEER_ADDRESS=peer0.clientaud.daala.com:7051
       - CORE_PEER_LOCALMSPID=ClientaudMSP
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/clientaud.daala.com/peers/peer0.clientaud.daala.com/tls/server.crt
