@@ -20,7 +20,9 @@ networks:
 services:
 
   kafka0:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -45,7 +47,9 @@ services:
       - daala
       
   kafka1:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -70,7 +74,9 @@ services:
       - daala
 
   kafka2:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
@@ -95,7 +101,9 @@ services:
       - daala
 
   kafka3:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1

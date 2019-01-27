@@ -18,7 +18,9 @@ networks:
 
 services:
   peer0ClientAud:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
@@ -65,7 +67,9 @@ services:
           - peer0.clientaud.daala.com
 
   peer1ClientAud:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
@@ -113,7 +117,9 @@ services:
 
 
   cli:
-    restart_policy: "always"
+    deploy:
+      restart_policy:
+        condition: on-failure
     image: hyperledger/fabric-tools:1.2.1
     tty: true
     stdin_open: true
