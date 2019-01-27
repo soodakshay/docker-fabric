@@ -31,7 +31,9 @@ services:
       - 2888
       - 3888
     networks:
-      - daala
+      daala:
+        aliases:
+          zookeeper0
 
   zookeeper1:
     deploy:
@@ -46,7 +48,9 @@ services:
       - 2888
       - 3888
     networks:
-      - daala
+      daala:
+        aliases:
+          zookeeper1
 
   zookeeper2:
     deploy:
@@ -61,4 +65,6 @@ services:
       - 2888
       - 3888
     networks:
-      - daala
+      daala:
+        aliases:
+          zookeeper2
