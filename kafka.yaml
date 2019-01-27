@@ -21,7 +21,7 @@ services:
 
   kafka0:
     restart: "no"
-    image: hyperledger/fabric-kafka
+    image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -46,7 +46,7 @@ services:
       
   kafka1:
     restart: "no"
-    image: hyperledger/fabric-kafka
+    image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -71,7 +71,7 @@ services:
 
   kafka2:
     restart: "no"
-    image: hyperledger/fabric-kafka
+    image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
       - KAFKA_MESSAGE_MAX_BYTES=103809024
@@ -96,7 +96,7 @@ services:
 
   kafka3:
     restart: "no"
-    image: hyperledger/fabric-kafka
+    image: hyperledger/fabric-kafka:0.4.10
     environment:
       - KAFKA_LOG_RETENTION_MS=-1
       - KAFKA_MESSAGE_MAX_BYTES=103809024

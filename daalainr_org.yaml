@@ -18,7 +18,7 @@ networks:
 services:
 
   peer0DaalaInr:
-    image: hyperledger/fabric-peer:1.2.0
+    image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     environment:
@@ -60,7 +60,7 @@ services:
           - peer0.daalainr.daala.com
 
   peer1DaalaInr:
-    image: hyperledger/fabric-peer:1.2.0
+    image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     environment:

@@ -15,7 +15,7 @@ networks:
 services:
 
   couchdb0:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -26,7 +26,7 @@ services:
     networks:
       - daala
   couchdb1:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -37,7 +37,7 @@ services:
     networks:
       - daala
   couchdb2:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -48,7 +48,7 @@ services:
     networks:
       - daala
   couchdb3:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -59,7 +59,7 @@ services:
     networks:
       - daala
   couchdb4:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -70,7 +70,7 @@ services:
     networks:
       - daala
   couchdb5:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -82,7 +82,7 @@ services:
       - daala
 
   couchdb6:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
@@ -93,7 +93,7 @@ services:
     networks:
       - daala
   couchdb7:
-    image: hyperledger/fabric-couchdb
+    image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
       - COUCHDB_PASSWORD=
