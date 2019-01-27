@@ -44,7 +44,9 @@ services:
       - zookeeper1:zookeeper1
       - zookeeper2:zookeeper2
     networks:
-      - daala
+      daala:
+        aliases:
+          kafka0
       
   kafka1:
     deploy:
@@ -71,7 +73,9 @@ services:
       - zookeeper1:zookeeper1
       - zookeeper2:zookeeper2
     networks:
-      - daala
+      daala:
+        aliases:
+          kafka1
 
   kafka2:
     deploy:
@@ -98,7 +102,9 @@ services:
       - zookeeper1:zookeeper1
       - zookeeper2:zookeeper2
     networks:
-      - daala
+      daala:
+        aliases:
+          kafka2
 
   kafka3:
     deploy:
@@ -126,4 +132,6 @@ services:
       - zookeeper1:zookeeper1
       - zookeeper2:zookeeper2
     networks:
-      - daala
+      daala:
+        aliases:
+          kafka3
