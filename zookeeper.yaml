@@ -19,7 +19,7 @@ networks:
 services:
 
   zookeeper0:
-    restart_policy_policy: "always"
+    restart_policy: "always"
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=1
