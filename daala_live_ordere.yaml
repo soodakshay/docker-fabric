@@ -14,7 +14,7 @@ volumes:
 
 services:
   orderer0:
-    image: hyperledger/fabric-orderer:latest
+    image: hyperledger/fabric-orderer:1.2.0
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -47,7 +47,7 @@ services:
         aliases:
           - orderer0.daala.com
   orderer1:
-    image: hyperledger/fabric-orderer:latest
+    image: hyperledger/fabric-orderer:1.2.0
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -80,7 +80,7 @@ services:
         aliases:
           - orderer1.daala.com
   orderer2:
-    image: hyperledger/fabric-orderer:latest
+    image: hyperledger/fabric-orderer:1.2.0
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
