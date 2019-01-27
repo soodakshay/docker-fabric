@@ -19,7 +19,8 @@ networks:
 services:
 
   zookeeper0:
-    restart_policy: "always"
+    deploy:
+      restart_policy: "always"
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=1
@@ -32,7 +33,8 @@ services:
       - daala
 
   zookeeper1:
-    restart_policy: "always"
+    deploy:
+      restart_policy: "always"
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=2
@@ -45,7 +47,8 @@ services:
       - daala
 
   zookeeper2:
-    restart_policy: "always"
+    deploy:
+      restart_policy: "always"
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=3
