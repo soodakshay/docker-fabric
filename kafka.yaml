@@ -39,10 +39,6 @@ services:
       - zookeeper0
       - zookeeper1
       - zookeeper2
-    links:
-      - zookeeper0:zookeeper0
-      - zookeeper1:zookeeper1
-      - zookeeper2:zookeeper2
     networks:
       daala:
         aliases:
@@ -68,10 +64,6 @@ services:
       - zookeeper0
       - zookeeper1
       - zookeeper2
-    links:
-      - zookeeper0:zookeeper0
-      - zookeeper1:zookeeper1
-      - zookeeper2:zookeeper2
     networks:
       daala:
         aliases:
@@ -97,10 +89,6 @@ services:
       - zookeeper0
       - zookeeper1
       - zookeeper2
-    links:
-      - zookeeper0:zookeeper0
-      - zookeeper1:zookeeper1
-      - zookeeper2:zookeeper2
     networks:
       daala:
         aliases:
@@ -122,15 +110,10 @@ services:
       - KAFKA_MIN_INSYNC_REPLICAS=1
     ports:
       - 9092
-    
     depends_on:
       - zookeeper0
       - zookeeper1
       - zookeeper2
-    links:
-      - zookeeper0:zookeeper0
-      - zookeeper1:zookeeper1
-      - zookeeper2:zookeeper2
     networks:
       daala:
         aliases:
