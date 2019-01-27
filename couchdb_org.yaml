@@ -27,7 +27,10 @@ services:
     ports:
       - "5984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb0
+  
   couchdb1:
     deploy:
       restart_policy:
@@ -41,7 +44,10 @@ services:
     ports:
       - "6984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb1
+  
   couchdb2:
     deploy:
       restart_policy:
@@ -55,7 +61,10 @@ services:
     ports:
       - "7984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb2
+  
   couchdb3:
     deploy:
       restart_policy:
@@ -69,7 +78,10 @@ services:
     ports:
       - "8984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb3
+  
   couchdb4:
     deploy:
       restart_policy:
@@ -83,7 +95,10 @@ services:
     ports:
       - "9984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb4
+  
   couchdb5:
     deploy:
       restart_policy:
@@ -97,7 +112,9 @@ services:
     ports:
       - "10984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb5
 
   couchdb6:
     deploy:
@@ -112,7 +129,10 @@ services:
     ports:
       - "11984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb6
+
   couchdb7:
     deploy:
       restart_policy:
@@ -126,5 +146,7 @@ services:
     ports:
       - "12984:5984"
     networks:
-      - daala
+      daala:
+        aliases:
+          - couchdb7
 

@@ -147,4 +147,6 @@ services:
     extra_hosts:
       - cli:127.0.0.1
     networks:
-      - daala
+      daala:
+        aliases:
+          - cli
