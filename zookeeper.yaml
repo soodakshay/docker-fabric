@@ -20,7 +20,8 @@ services:
 
   zookeeper0:
     deploy:
-      restart_policy: "always"
+      restart_policy:
+        condition: always
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=1
@@ -34,7 +35,8 @@ services:
 
   zookeeper1:
     deploy:
-      restart_policy: "always"
+      restart_policy:
+        condition: always
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=2
@@ -48,7 +50,8 @@ services:
 
   zookeeper2:
     deploy:
-      restart_policy: "always"
+      restart_policy:
+        condition: always
     image: hyperledger/fabric-zookeeper:0.4.10
     environment:
       - ZOO_MY_ID=3
