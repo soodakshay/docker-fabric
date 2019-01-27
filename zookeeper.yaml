@@ -33,7 +33,7 @@ services:
     networks:
       daala:
         aliases:
-          zookeeper0
+          - zookeeper0
 
   zookeeper1:
     deploy:
@@ -50,7 +50,7 @@ services:
     networks:
       daala:
         aliases:
-          zookeeper1
+          - zookeeper1
 
   zookeeper2:
     deploy:
@@ -67,4 +67,4 @@ services:
     networks:
       daala:
         aliases:
-          zookeeper2
+          - zookeeper2
