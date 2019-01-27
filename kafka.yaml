@@ -46,7 +46,7 @@ services:
     networks:
       daala:
         aliases:
-          kafka0
+          - kafka0
       
   kafka1:
     deploy:
@@ -75,7 +75,7 @@ services:
     networks:
       daala:
         aliases:
-          kafka1
+          - kafka1
 
   kafka2:
     deploy:
@@ -104,7 +104,7 @@ services:
     networks:
       daala:
         aliases:
-          kafka2
+          - kafka2
 
   kafka3:
     deploy:
@@ -134,4 +134,4 @@ services:
     networks:
       daala:
         aliases:
-          kafka3
+          - kafka3
