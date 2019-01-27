@@ -19,6 +19,7 @@ networks:
 services:
 
   peer0ClientInr:
+    restart: "always"
     image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
@@ -65,6 +66,7 @@ services:
           - peer0.clientinr.daala.com
 
   peer1ClientInr:
+    restart: "always"
     image: hyperledger/fabric-peer:1.2.1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start

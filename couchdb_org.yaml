@@ -15,6 +15,7 @@ networks:
 services:
 
   couchdb0:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
@@ -26,6 +27,7 @@ services:
     networks:
       - daala
   couchdb1:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
@@ -37,6 +39,7 @@ services:
     networks:
       - daala
   couchdb2:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
@@ -59,6 +62,7 @@ services:
     networks:
       - daala
   couchdb4:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
@@ -70,6 +74,7 @@ services:
     networks:
       - daala
   couchdb5:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=
@@ -82,6 +87,7 @@ services:
       - daala
 
   couchdb6:
+    restart: "always"
     image: hyperledger/fabric-couchdb:0.4.10
     environment:
       - COUCHDB_USER=

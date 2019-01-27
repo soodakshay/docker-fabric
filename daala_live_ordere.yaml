@@ -14,6 +14,7 @@ volumes:
 
 services:
   orderer0:
+    restart: "always"
     image: hyperledger/fabric-orderer:1.2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
@@ -47,6 +48,7 @@ services:
         aliases:
           - orderer0.daala.com
   orderer1:
+    restart: "always"
     image: hyperledger/fabric-orderer:1.2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
@@ -80,6 +82,7 @@ services:
         aliases:
           - orderer1.daala.com
   orderer2:
+    restart: "always"
     image: hyperledger/fabric-orderer:1.2.1
     environment:
       - ORDERER_GENERAL_LOGLEVEL=DEBUG
